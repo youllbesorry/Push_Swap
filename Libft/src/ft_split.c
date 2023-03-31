@@ -12,7 +12,7 @@
 
 #include "../headers/libft.h"
 
-static	ssize_t	ft_cont_word(char const *s, char c)
+ssize_t	ft_cont_word(char const *s, char c)
 {
 	ssize_t	i;
 	ssize_t	n;
@@ -80,6 +80,7 @@ static ssize_t	ft_split_iteration(char const *s, char c, char **strs,
 		i++;
 		len += start;
 	}
+	strs[i] = '\0';
 	return (i);
 }
 
@@ -92,7 +93,7 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	nbword = ft_cont_word(s, c);
-	strs = malloc((sizeof(char *)) * nbword);
+	strs = malloc((sizeof(char *)) * (nbword) + 1);
 	if (!strs)
 		return (NULL);
 	i = ft_split_iteration(s, c, strs, nbword);

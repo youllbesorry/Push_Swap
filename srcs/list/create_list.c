@@ -1,21 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   create_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/30 18:09:37 by bfaure            #+#    #+#             */
-/*   Updated: 2023/03/31 14:11:07 by bfaure           ###   ########lyon.fr   */
+/*   Created: 2023/03/31 12:59:00 by bfaure            #+#    #+#             */
+/*   Updated: 2023/03/31 13:37:38 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../headers/push_swap_list.h"
 
-# include "../srcs/list/headers/push_swap_list.h"
-# include "../Libft/headers/libft.h"
-# include "../Libft/headers/ft_printf.h"
-# include "struct.h"
+t_list	*make_list(char	**tab_list)
+{
+	size_t	i;
+	int		nb;
+	t_list	*following;
+	t_list	*a;
 
-#endif
+	i = 0;
+	while (tab_list)
+	{
+		nb = ft_atoi(tab_list[i]);
+		if (i == 1)
+			a = ft_lstnew(nb);
+		else
+		{
+			following = ft_lstnew(nb);
+			if (!following)
+				return (0);
+			ft_lstadd_back(&a, following);
+		}
+		i++;
+	}
+	if (i > 0)
+		ft_print_list(a);
+	ft_lstclear(a);
+}

@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Chain_list.h                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 14:56:09 by bfaure            #+#    #+#             */
-/*   Updated: 2023/03/28 14:56:09 by bfaure           ###   ########lyon.fr   */
+/*   Created: 2022/11/18 11:15:42 by bfaure            #+#    #+#             */
+/*   Updated: 2022/11/18 11:15:42 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_LIST_H
-# define PUSH_SWAP_LIST_H
+#include "../headers/libft.h"
 
-# include "struct.h"
-# include "../../../headers/push_swap.h"
-# include <stdlib.h>
-# include <stdio.h>
+char	*ft_strfjoin(char *s1, char *s2)
+{
+	char	*str;
+	int		i;
+	int		k;
 
-t_list	*ft_lstnew(int content);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstclear(t_list *lst);
-void	ft_print_list(t_list *lst);
-t_list	*make_list(char	**tab_list);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-
-#endif
+	if (!s1 || !s2)
+		return (free(s1), NULL);
+	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (!str)
+		return (free(s1), NULL);
+	i = -1;
+	while (s1[++i])
+		str[i] = s1[i];
+	k = 0;
+	while (s2[k])
+		str[i++] = s2[k++];
+	return (str[i] = '\0', free(s1), str);
+}

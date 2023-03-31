@@ -6,7 +6,7 @@
 #    By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 17:23:30 by bfaure            #+#    #+#              #
-#    Updated: 2023/03/30 19:32:33 by bfaure           ###   ########lyon.fr    #
+#    Updated: 2023/03/31 12:03:45 by bfaure           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,14 +33,14 @@ LIBFT_A = $(DIR_LIBFT)$(LIBFT)
 HEAD			=	headers/push_swap.h\
 					srcs/list/headers/push_swap_list.h\
 					
-SRCS			=	main.c\
-					../srcs/list/src/ft_lstadd_back.c\
-					../srcs/list/src/ft_lstlast.c\
-					../srcs/list/src/ft_lstclear.c\
-					../srcs/list/src/ft_lstnew.c\
-					../srcs/list/src/ft_print_list.c\
+SRCS			=	${DIR_SRCS}main.c\
+					${DIR_SRCS}list/src/ft_lstadd_back.c\
+					${DIR_SRCS}list/src/ft_lstlast.c\
+					${DIR_SRCS}list/src/ft_lstclear.c\
+					${DIR_SRCS}list/src/ft_lstnew.c\
+					${DIR_SRCS}list/src/ft_print_list.c\
 
-OBJS = ${SRCS:%.c=${DIR_OBJS}%.o}
+OBJS			=	${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 
 # ---- Compilation ---- #
 
@@ -69,8 +69,8 @@ ${NAME}	:	${OBJS}
 
 # ---- Compiled Rules ---- #
 
-${DIR_OBJS}%.o	:	${DIR_SRCS}%.c ${HEAD} $(LIBFT_A)
-	@				${MKDIR} ${DIR_OBJS}
+${DIR_OBJS}%.o:%.c ${HEAD} $(LIBFT_A)
+	@				${MKDIR} ${DIR_OBJS}/srcs/list/src
 					${CC} ${CFLAGS} -I $(DIR_LIBFT) -I. -c $< -o $@	
 
 # ---- Usual Commands ---- #
