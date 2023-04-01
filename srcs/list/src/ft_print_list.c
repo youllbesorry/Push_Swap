@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:05:04 by bfaure            #+#    #+#             */
-/*   Updated: 2023/03/31 13:37:49 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/01 22:13:13 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_print_list(t_list *lst)
 {
+	ft_printf("============================LIST===============================\n");
 	while (lst)
 	{
 		ft_printf("content %d index [%d]\n", lst->content, lst->index);

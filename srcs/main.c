@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 16:52:03 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/01 16:05:17 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/01 23:14:21 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,23 +41,50 @@ int	join_arg(int argc, char **argv, t_data *data)
 	return (0);
 }
 
+int	split_args(t_data *data)
+{
+	size_t	i;
+	size_t	j;
+
+	ft_printf("============================V1=================================\n");
+	i = 0;
+	data->tab_list = ft_split(data->arg, ' ');
+	if (!data->tab_list)
+		return (free_tab(data->tab_list), -1);
+	while (data->tab_list[i])
+	{
+		ft_printf("data.tab_list[%i] = %s\n", i, data->tab_list[i]);
+		i++;
+	}
+	ft_printf("============================V2=================================\n");
+	i = 0;
+	while (data->tab_list[i])
+	{
+		j = 0;
+		while (data->tab_list[i][j])
+		{
+			if (data->tab_list[i][j] >= -9 && data->tab_list[i][j] <= 9)
+				return (free_all(data), -1);
+			ft_printf("data.tab_list[%i][%i] = %c\n", i, j, data->tab_list[i][j]);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_data	data;
-	size_t	i;
 
-	i = 0;
 	init_data(&data);
 	if (join_arg(argc, argv, &data) == -1)
 		return (-1);
 	ft_printf("data.arg = %s\n", data.arg);
-	data.tab_list = ft_split(data.arg, ' ');
-	while (data.tab_list[i])
-	{
-		ft_printf("data.tab_list[%i] = %s\n", i, data.tab_list[i]);
-		i++;
-	}
-	make_list(&data);
+	if (split_args(&data) == -1)
+		return (-1);
+	if (!make_list(&data))
+		return (free_all(&data), -1);
 	free_all(&data);
 	return (0);
 }
