@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_list.c                                      :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 12:59:00 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/01 16:11:51 by bfaure           ###   ########lyon.fr   */
+/*   Created: 2023/04/01 15:41:53 by bfaure            #+#    #+#             */
+/*   Updated: 2023/04/01 15:48:58 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers/push_swap_list.h"
+#include "../headers/push_swap.h"
 
-t_list	*make_list(t_data *data)
+void	free_tab(char **tab)
 {
 	size_t	i;
-	int		nb;
-	t_list	*following;
-	t_list	*a;
 
 	i = 0;
-	while (data->tab_list[i])
+	while (tab[i])
 	{
-		nb = ft_atoi(data->tab_list[i]);
-		if (i == 0)
-			a = ft_lstnew(nb);
-		else
-		{
-			following = ft_lstnew(nb);
-			if (!following)
-				return (0);
-			ft_lstadd_back(&a, following);
-		}
+		free(tab[i]);
 		i++;
 	}
-	if (i > 0)
-		ft_print_list(a);
-	ft_lstclear(a);
-	return (NULL);
+	free(tab);
+	return ;
+}
+
+void	free_all(t_data *data)
+{
+	free(data->arg);
+	free_tab(data->tab_list);
+	return ;
+}
+
+void	init_data(t_data *data)
+{
+	data->arg = NULL;
+	data->tab_list = NULL;
+	return ;
 }

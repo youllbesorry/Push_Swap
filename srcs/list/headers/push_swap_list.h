@@ -13,8 +13,9 @@
 #ifndef PUSH_SWAP_LIST_H
 # define PUSH_SWAP_LIST_H
 
-# include "struct.h"
+# include "list.h"
 # include "../../../headers/push_swap.h"
+# include "../../../headers/struct.h"
 # include <stdlib.h>
 # include <stdio.h>
 
@@ -22,7 +23,7 @@ t_list	*ft_lstnew(int content);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstclear(t_list *lst);
 void	ft_print_list(t_list *lst);
-t_list	*make_list(char	**tab_list);
+t_list	*make_list(t_data *data);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif
