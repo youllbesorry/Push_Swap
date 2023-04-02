@@ -6,7 +6,7 @@
 #    By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 17:23:30 by bfaure            #+#    #+#              #
-#    Updated: 2023/04/01 21:54:14 by bfaure           ###   ########lyon.fr    #
+#    Updated: 2023/04/02 10:15:32 by bfaure           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ HEAD			=	headers/push_swap.h\
 					
 SRCS			=	${DIR_SRCS}main.c\
 					${DIR_SRCS}utils.c\
+					${DIR_SRCS}parsing.c\
 					${DIR_SRCS}list/create_list.c\
 					${DIR_SRCS}list/src/ft_lstadd_back.c\
 					${DIR_SRCS}list/src/ft_lstlast.c\

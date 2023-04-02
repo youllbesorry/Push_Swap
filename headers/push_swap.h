@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 18:09:37 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/01 15:59:34 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/02 10:15:14 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@
 # include "struct.h"
 
 void	free_tab(char **tab);
-void	init_data(t_data *data);
 void	free_all(t_data *data);
+void	init_data(t_data *data);
+
+int		split_args(t_data *data);
+int		check_val_args(t_data *data);
+int		join_arg(int argc, char **argv, t_data *data);
 
 #endif
