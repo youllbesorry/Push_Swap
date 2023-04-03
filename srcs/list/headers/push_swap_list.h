@@ -20,7 +20,7 @@
 # include <stdio.h>
 
 void	init_list(t_list *lst);
-t_list	*ft_lstnew(int content);
+t_list	*ft_lstnew(long long content);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstclear(t_list *lst);
 t_list	*make_list(t_data *data);

@@ -12,7 +12,7 @@
 
 #include "../headers/push_swap_list.h"
 
-t_list	*ft_lstnew(int content)
+t_list	*ft_lstnew(long long content)
 {
 	t_list			*lst;
 	static size_t	i = 0;

@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/30 15:04:51 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/03 17:08:13 by bfaure           ###   ########lyon.fr   */
+/*   Created: 2023/04/03 16:32:13 by bfaure            #+#    #+#             */
+/*   Updated: 2023/04/03 16:52:27 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap_list.h"
+#include "../headers/libft.h"
 
-void	ft_lstclear(t_list *lst)
+long long	ft_atoll(const char *str)
 {
-	t_list	*temp;
+	long long	nb;
+	int			sign;
+	int			n;
 
-	while (lst)
+	nb = 0;
+	sign = 1;
+	n = 0;
+	while ((*str >= 9 && *str <= 13) || (*str == 32))
+		str++;
+	while (*str == '+' || *str == '-')
 	{
-		temp = lst->next;
-		free(lst);
-		lst = temp;
+		if (++n > 1)
+			return (0);
+		if (*str == '-')
+			sign *= -1;
+		str++;
 	}
-	return ;
+	while (*str >= '0' && *str <= '9')
+	{
+		nb = nb * 10 + *str - '0';
+		str++;
+	}
+	return (nb * sign);
 }

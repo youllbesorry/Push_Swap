@@ -16,7 +16,7 @@
 typedef struct s_list
 {
 	unsigned int	index;
-	int				content;
+	long long		content;
 	struct s_list	*next;
 
 }	t_list;
