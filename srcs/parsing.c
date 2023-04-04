@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:13:10 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/03 19:32:09 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/04 09:03:35 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,37 +122,23 @@ int	check_weird_args(t_data *data)
 	return (0);
 }
 
-void	parsing_error(t_data *data)
+int	check_miltiple_same_digits(t_data *data)
 {
-	int	error;
+	size_t	i;
+	size_t	j;
 
-	error = check_val_args(data);
-	if (error == -1)
+	ft_printf("============================V5=================================\n");
+	i = 0;
+	while (data->tab_list[i])
 	{
-		ft_printf("============================ERROR==============================\n");
-		ft_putstr_fd("ERROR\nA alone sign or multiple "
-			"consecutive sign was found\n", 2);
-		exit(0);
+		j = 0;
+		while (data->tab_list[i][j])
+		{
+			break ;
+			j++;
+		}
+		ft_printf("data->tab_list[%i] = %s\n", i, data->tab_list[i]);
+		i++;
 	}
-	if (error == -2)
-	{
-		ft_printf("============================ERROR==============================\n");
-		ft_putstr_fd("ERROR\nA non-digital char was found\n", 2);
-		exit(0);
-	}
-	error = check_weird_args(data);
-	if (error == -1)
-	{
-		ft_printf("============================ERROR==============================\n");
-		ft_putstr_fd("ERROR\nA sign was found inside of an arg\n", 2);
-		exit(0);
-	}
-	if (error == -2)
-	{
-		ft_printf("============================ERROR==============================\n");
-		ft_putstr_fd("ERROR\nMore than 1 sign was found in 1 arg\n", 2);
-		exit(0);
-	}
-	return ;
+	return (0);
 }
-
