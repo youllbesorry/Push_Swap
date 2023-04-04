@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:59:00 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/03 17:19:18 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/04 16:26:49 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,34 @@ t_list	*make_list(t_data *data)
 		}
 		i++;
 	}
-	if (i > 0)
-		ft_print_list(a);
 	return (a);
+}
+
+void	index_list_value(t_list *lst)
+{
+	t_list	*tmp_lst;
+	t_list	*head;
+	int		tmp;
+	int		index;
+
+	tmp = lst->content;
+	head = lst;
+	ft_printf("============================INDEX==============================\n");
+	while (lst)
+	{
+		index = 0;
+		tmp = lst->content;
+		tmp_lst = head;
+		ft_printf("content tmp %i\n", tmp);
+		while (tmp_lst)
+		{
+			ft_printf("content tmp_lst->content %d\n", tmp_lst->content);
+			if (tmp > tmp_lst->content)
+				index++;
+			tmp_lst = tmp_lst->next;
+		}
+		lst->index = index;
+		lst = lst->next;
+	}
+	return ;
 }

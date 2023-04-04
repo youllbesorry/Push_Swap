@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:13:10 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/04 09:03:35 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/04 16:25:51 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,23 +122,26 @@ int	check_weird_args(t_data *data)
 	return (0);
 }
 
-int	check_miltiple_same_digits(t_data *data)
+int	check_multiple_same_digits(t_list *lst)
 {
-	size_t	i;
-	size_t	j;
+	t_list	*tmp_lst;
+	int		tmp;
 
+	tmp = lst->content;
 	ft_printf("============================V5=================================\n");
-	i = 0;
-	while (data->tab_list[i])
+	while (lst)
 	{
-		j = 0;
-		while (data->tab_list[i][j])
+		tmp = lst->content;
+		lst = lst->next;
+		tmp_lst = lst;
+		ft_printf("content tmp %i\n", tmp);
+		while (tmp_lst)
 		{
-			break ;
-			j++;
+			ft_printf("content tmp_lst->content %d\n", tmp_lst->content);
+			if (tmp == tmp_lst->content)
+				return (ft_lstclear(lst), -1);
+			tmp_lst = tmp_lst->next;
 		}
-		ft_printf("data->tab_list[%i] = %s\n", i, data->tab_list[i]);
-		i++;
 	}
 	return (0);
 }
