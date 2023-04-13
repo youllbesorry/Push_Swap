@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 16:52:03 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/05 15:55:24 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/13 16:29:26 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	free_all(&data);
 	if (check_multiple_same_digits(lst) == -1)
 	{
-		ft_printf("============================ERROR==============================\n");
+		ft_printf(RED"============================ERROR==============================\n"END);
 		ft_putstr_fd("ERROR\nMultiple same digits found\n", 2);
 		exit (0);
 	}

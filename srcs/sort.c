@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:40:39 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/05 17:01:47 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/13 16:31:50 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	check_sort(t_list *lst)
 	unsigned int	tmp;
 
 	tmp = lst->index;
-	ft_printf("============================CHECK_SORT=========================\n");
+	ft_printf(RED"============================CHECK_SORT=========================\n"END);
 	while (lst)
 	{
 		tmp = lst->index;

@@ -6,12 +6,15 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 18:09:37 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/05 15:48:29 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/13 16:28:49 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# define END "\033[0m"
+# define RED "\033[1;31m"
 
 # include "../srcs/list/headers/push_swap_list.h"
 # include "../Libft/headers/libft.h"

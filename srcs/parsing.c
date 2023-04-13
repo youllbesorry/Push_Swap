@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:13:10 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/04 16:25:51 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/13 16:31:20 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	join_arg(int argc, char **argv, t_data *data)
 	i = 1;
 	if (argc <= 1)
 		return (0);
-	ft_printf("============================V1=================================\n");
+	ft_printf(RED"============================V1=================================\n"END);
 	while (i < argc)
 	{
 		if (i == 1)
@@ -47,7 +47,7 @@ int	split_args(t_data *data)
 {
 	size_t	i;
 
-	ft_printf("============================V2=================================\n");
+	ft_printf(RED"============================V2=================================\n"END);
 	i = 0;
 	data->tab_list = ft_split(data->arg, ' ');
 	if (!data->tab_list)
@@ -65,7 +65,7 @@ int	check_val_args(t_data *data)
 	size_t	i;
 	size_t	j;
 
-	ft_printf("============================V3=================================\n");
+	ft_printf(RED"============================V3=================================\n"END);
 	i = 0;
 	while (data->tab_list[i])
 	{
@@ -97,7 +97,7 @@ int	check_weird_args(t_data *data)
 	size_t	j;
 	size_t	sign;
 
-	ft_printf("============================V4=================================\n");
+	ft_printf(RED"============================V4=================================\n"END);
 	i = 0;
 	sign = 0;
 	while (data->tab_list[i])
@@ -128,7 +128,7 @@ int	check_multiple_same_digits(t_list *lst)
 	int		tmp;
 
 	tmp = lst->content;
-	ft_printf("============================V5=================================\n");
+	ft_printf(RED"============================V5=================================\n"END);
 	while (lst)
 	{
 		tmp = lst->content;
