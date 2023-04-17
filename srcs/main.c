@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 16:52:03 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/13 16:29:26 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/16 16:28:35 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	main(int argc, char **argv)
 		ft_printf("List sort\n");
 	else
 		ft_printf("List not sort\n");
+	ft_printf("index max len = %i\n", index_len(lst));
 	ft_lstclear(lst);
 	return (0);
 }
