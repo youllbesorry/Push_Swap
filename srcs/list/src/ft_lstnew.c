@@ -15,14 +15,11 @@
 t_list	*ft_lstnew(long long content)
 {
 	t_list			*lst;
-	static size_t	i = 0;
 
 	lst = malloc(sizeof(t_list));
 	if (!lst)
 		return (NULL);
 	lst->content = content;
-	lst->index = i;
 	lst->next = NULL;
-	i++;
 	return (lst);
 }

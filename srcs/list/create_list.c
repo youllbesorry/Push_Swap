@@ -6,13 +6,13 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:59:00 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/13 16:32:08 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/19 14:09:00 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/push_swap_list.h"
 
-t_list	*make_list(t_data *data)
+t_list	*make_list_a(t_data *data)
 {
 	size_t		i;
 	long long	nb;

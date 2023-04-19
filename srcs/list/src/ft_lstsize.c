@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 14:08:29 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/19 13:38:28 by bfaure           ###   ########lyon.fr   */
+/*   Created: 2023/04/19 14:07:22 by bfaure            #+#    #+#             */
+/*   Updated: 2023/04/19 14:08:09 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
+#include "../headers/push_swap_list.h"
 
-# include <string.h>
-
-typedef struct s_data
+size_t	lst_size(t_list *lst)
 {
-	char	*arg;
-	char	**tab_list;
-	size_t	lst_a_size;
-}	t_data;
+	size_t			i;
 
-#endif
+	i = 0;
+	while (lst)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
+}
