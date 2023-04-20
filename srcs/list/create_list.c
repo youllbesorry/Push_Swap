@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:59:00 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/19 14:09:00 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/20 18:44:09 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,16 @@ void	index_list_value(t_list *lst)
 
 	tmp = lst->content;
 	head = lst;
-	ft_printf(RED"============================INDEX==============================\n"END);
+	//ft_printf(RED"============================INDEX==============================\n"END);
 	while (lst)
 	{
 		index = 0;
 		tmp = lst->content;
 		tmp_lst = head;
-		ft_printf("content tmp %i\n", tmp);
+		//ft_printf("content tmp %i\n", tmp);
 		while (tmp_lst)
 		{
-			ft_printf("content tmp_lst->content %d\n", tmp_lst->content);
+			//ft_printf("content tmp_lst->content %d\n", tmp_lst->content);
 			if (tmp > tmp_lst->content)
 				index++;
 			tmp_lst = tmp_lst->next;

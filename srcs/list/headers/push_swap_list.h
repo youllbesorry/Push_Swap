@@ -19,13 +19,14 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-void	init_list(t_list *lst);
+//void	init_list(t_list *lst);
 t_list	*ft_lstnew(long long content);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstclear(t_list *lst);
 t_list	*make_list_a(t_data *data);
-size_t	lst_size(t_list *lst);
+size_t	ft_lstsize(t_list *lst);
 void	ft_print_list(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdel_link(t_list *lst, size_t n);
 
 #endif

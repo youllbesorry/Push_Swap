@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:40:39 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/19 17:12:00 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/20 18:43:43 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	check_sort(t_list *lst_a)
 	unsigned int	tmp;
 
 	tmp = lst_a->index;
-	ft_printf(RED"============================CHECK_SORT=========================\n"END);
+	//ft_printf(RED"============================CHECK_SORT=========================\n"END);
 	while (lst_a)
 	{
 		tmp = lst_a->index;
@@ -34,20 +34,28 @@ int	check_sort(t_list *lst_a)
 	return (0);
 }
 
-void	bit_shifting(t_list	*lst_a)
+void	bit_shifting(t_list	**lst_a, t_list **lst_b)
 {
-	// int	tmp;
-	t_list	*lst_b;
+	size_t			i;
+	size_t			size;
+	size_t			index;
 
-	lst_b = NULL;
-	// tmp = lst_a->index;
-	// ft_printf("tmp = %i\n", tmp);
-	// tmp = tmp >> 1;
-	// ft_printf("tmp bitshift = %i\n", tmp);
-	s(lst_a);
-	ft_print_list(lst_a);
-	p(lst_b, lst_a);
-	ft_print_list(lst_a);
-	//ft_print_list(lst_b);
+	i = 0;
+	size = ft_lstsize(*lst_a) - 1;
+	while (check_sort(*lst_a) != 0)
+	{
+		index = 0;
+		while (index <= size)
+		{
+			if (((*lst_a)->index >> i) % 2 == 1)
+				r(lst_a, "ra");
+			else
+				p(lst_a, lst_b, "rb");
+			index++;
+		}
+		while ((*lst_b))
+			p(lst_b, lst_a, "pa");
+		i++;
+	}
 	return ;
 }

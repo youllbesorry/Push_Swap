@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 18:09:37 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/19 17:12:16 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/20 17:01:07 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,16 @@
 # include "struct.h"
 # include "limits.h"
 
-void	s(t_list *lst);
+void	s(t_list **lst, char *rule);
+void	r(t_list **lst, char *rule);
+void	rr(t_list **lst, char *rule);
 void	free_tab(char **tab);
 void	free_all(t_data *data);
 void	init_data(t_data *data);
-void	bit_shifting(t_list	*lst_a);
+void	bit_shifting(t_list	**lst_a, t_list **lst_b);
 void	parsing_error(t_data *data);
 void	index_list_value(t_list *lst);
-void	p(t_list *lst_1, t_list *lst_2);
+void	p(t_list **lst_1, t_list **lst_2, char *rule);
 
 int		check_sort(t_list *lst);
 int		split_args(t_data *data);
