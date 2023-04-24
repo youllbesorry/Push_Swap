@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:40:39 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/20 18:43:43 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/24 16:11:18 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	check_sort(t_list *lst_a)
 	unsigned int	tmp;
 
 	tmp = lst_a->index;
-	//ft_printf(RED"============================CHECK_SORT=========================\n"END);
 	while (lst_a)
 	{
 		tmp = lst_a->index;
@@ -34,7 +33,25 @@ int	check_sort(t_list *lst_a)
 	return (0);
 }
 
-void	bit_shifting(t_list	**lst_a, t_list **lst_b)
+void	sort(t_list **lst_a, t_list **lst_b)
+{
+	size_t	size;
+
+	size = ft_lstsize((*lst_a));
+	if (size == 2)
+		s(lst_a, "sa");
+	else if (size == 3)
+		sort_three(lst_a);
+	else if (size == 4)
+		sort_four(lst_a, lst_b);
+	else if (size == 5)
+		sort_five(lst_a, lst_b);
+	else if (size > 5)
+		radix(lst_a, lst_b);
+	return ;
+}
+
+void	radix(t_list **lst_a, t_list **lst_b)
 {
 	size_t			i;
 	size_t			size;

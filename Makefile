@@ -6,7 +6,7 @@
 #    By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 17:23:30 by bfaure            #+#    #+#              #
-#    Updated: 2023/04/20 15:06:09 by bfaure           ###   ########lyon.fr    #
+#    Updated: 2023/04/24 12:41:29 by bfaure           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRCS			=	${DIR_SRCS}main.c\
 					${DIR_SRCS}sort.c\
 					${DIR_SRCS}utils.c\
 					${DIR_SRCS}parsing.c\
+					${DIR_SRCS}short_sort.c\
 					${DIR_SRCS}parsing_error.c\
 					${DIR_SRCS}list/create_list.c\
 					${DIR_SRCS}list/src/ft_lstnew.c\

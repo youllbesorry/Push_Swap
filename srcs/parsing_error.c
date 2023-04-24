@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 08:57:45 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/21 14:20:08 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/24 11:25:29 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,7 @@
 
 void	parsing_error(t_data *data)
 {
-	int	error;
-
-	error = check_val_args(data);
-	if (error == -1)
-	{
-		ft_putstr_fd("ERROR\n", 2);
-		exit(0);
-	}
-	error = check_weird_args(data);
-	if (error == -1)
+	if (check_val_args(data) == -1 || check_weird_args(data) == -1)
 	{
 		ft_putstr_fd("ERROR\n", 2);
 		exit(0);
