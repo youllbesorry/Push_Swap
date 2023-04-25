@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 18:09:37 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/25 15:41:06 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/25 16:58:51 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include "../Libft/headers/libft.h"
 # include "../Libft/headers/ft_printf.h"
 # include "struct.h"
-# include "limits.h"
 
 void	free_tab(char **tab);
 void	free_all(t_data *data);
