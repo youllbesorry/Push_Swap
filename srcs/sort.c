@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:40:39 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/24 16:11:18 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/25 10:11:16 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	radix(t_list **lst_a, t_list **lst_b)
 			if (((*lst_a)->index >> i) % 2 == 1)
 				r(lst_a, "ra");
 			else
-				p(lst_a, lst_b, "rb");
+				p(lst_a, lst_b, "pb");
 			index++;
 		}
 		while ((*lst_b))
