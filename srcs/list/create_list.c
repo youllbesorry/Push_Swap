@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:59:00 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/24 11:26:18 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/25 15:09:07 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ t_list	*make_list_a(t_data *data)
 	t_list		*a;
 
 	i = 0;
+	a = NULL;
 	while (data->tab_list[i])
 	{
 		nb = ft_atoll(data->tab_list[i]);
-		if (nb > 2147483647 || nb < -2147483648)
-			return (ft_lstclear(a),
-				ft_putstr_fd("ERROR\nInt overflow\n", 2), NULL);
+		if (nb < -2147483648 || nb > 2147483647)
+			return (ft_lstclear(a), ft_putstr_fd("Error\n", 2), NULL);
 		if (i == 0)
 			a = ft_lstnew(nb);
 		else

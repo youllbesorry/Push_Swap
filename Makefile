@@ -6,7 +6,7 @@
 #    By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 17:23:30 by bfaure            #+#    #+#              #
-#    Updated: 2023/04/24 12:41:29 by bfaure           ###   ########lyon.fr    #
+#    Updated: 2023/04/25 15:16:21 by bfaure           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,14 +47,13 @@ SRCS			=	${DIR_SRCS}main.c\
 					${DIR_SRCS}list/src/ft_lstclear.c\
 					${DIR_SRCS}list/src/ft_print_list.c\
 					${DIR_SRCS}list/src/ft_lstadd_back.c\
-					${DIR_SRCS}list/src/ft_lstdel_link.c\
 
 OBJS			=	${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 
 # ---- Compilation ---- #
 
 CC		=	cc
-CFLAGS	=	-Wall -Wextra -Werror -g3
+CFLAGS	=	-Wall -Wextra -Werror
 
 # ---- Commands ---- #
 

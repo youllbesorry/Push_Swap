@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 12:40:36 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/24 16:25:21 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/25 15:14:32 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ void	sort_five(t_list **lst_a, t_list **lst_b)
 			r(lst_a, "ra");
 	}
 	sort_three(lst_a);
+	if ((*lst_b)->index < (*lst_b)->next->index)
+		s(lst_b, "sb");
 	p(lst_b, lst_a, "pa");
 	p(lst_b, lst_a, "pa");
 	return ;

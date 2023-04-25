@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:13:10 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/21 14:19:18 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/25 15:01:23 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	join_arg(int argc, char **argv, t_data *data)
 
 	i = 1;
 	if (argc <= 1)
-		return (0);
+		return (-1);
 	while (i < argc)
 	{
 		if (i == 1)
@@ -43,14 +43,11 @@ int	join_arg(int argc, char **argv, t_data *data)
 
 int	split_args(t_data *data)
 {
-	size_t	i;
-
-	i = 0;
 	data->tab_list = ft_split(data->arg, ' ');
 	if (!data->tab_list)
 		return (free_tab(data->tab_list), -1);
-	while (data->tab_list[i])
-		i++;
+	if (!data->tab_list[0])
+		return (free_all(data), -1);
 	return (0);
 }
 
