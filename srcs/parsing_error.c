@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 08:57:45 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/25 14:31:37 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/26 16:40:59 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	parsing_error(t_data *data, t_list **lst_a, int n)
 	{
 		if (check_multiple_same_digits(*lst_a) == -1)
 		{
+			free_all(data);
 			ft_putstr_fd("Error\n", 2);
 			exit (0);
 		}

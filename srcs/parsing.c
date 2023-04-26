@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:13:10 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/25 15:01:23 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/04/26 16:37:43 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,10 +111,12 @@ int	check_weird_args(t_data *data)
 
 int	check_multiple_same_digits(t_list *lst)
 {
+	t_list	*head;
 	t_list	*tmp_lst;
 	int		tmp;
 
 	tmp = lst->content;
+	head = lst;
 	while (lst)
 	{
 		tmp = lst->content;
@@ -123,9 +125,10 @@ int	check_multiple_same_digits(t_list *lst)
 		while (tmp_lst)
 		{
 			if (tmp == tmp_lst->content)
-				return (ft_lstclear(lst), -1);
+				return (ft_lstclear(head), -1);
 			tmp_lst = tmp_lst->next;
 		}
 	}
+	lst = head;
 	return (0);
 }

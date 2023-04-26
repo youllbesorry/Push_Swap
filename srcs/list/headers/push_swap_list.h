@@ -15,8 +15,8 @@
 
 # include "list.h"
 # include <stdlib.h>
-# include "../../../headers/push_swap.h"
 # include "../../../headers/struct.h"
+# include "../../../headers/push_swap.h"
 
 t_list	*ft_lstnew(long long content);
 t_list	*ft_lstlast(t_list *lst);
