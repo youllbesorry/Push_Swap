@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_error.c                                    :+:      :+:    :+:   */
+/*   ft_strlen_int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/04 08:57:45 by bfaure            #+#    #+#             */
-/*   Updated: 2023/05/03 14:58:38 by bfaure           ###   ########lyon.fr   */
+/*   Created: 2023/05/03 15:10:49 by bfaure            #+#    #+#             */
+/*   Updated: 2023/05/03 15:31:18 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../headers/libft.h"
 
-void	parsing_error(t_data *data, t_list **lst_a, int n)
+size_t	ft_strlen_int(const char *s)
 {
-	if (n == 0)
-	{
-		if (check_val_args(data) == -1 || check_weird_args(data) == -1)
-		{
-			ft_putstr_fd("Error\n", 2);
-			exit(0);
-		}
-	}
-	else if (n == 1)
-	{
-		if (check_multiple_same_digits(*lst_a) == -1)
-		{
-			free_all(data);
-			ft_putstr_fd("Error\n", 2);
-			exit(0);
-		}
-	}
-	return ;
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	if (s[i] == '-' || s[i] == '+')
+		j++;
+	while (s[i] != '\0')
+		i++;
+	return (i - j);
 }

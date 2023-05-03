@@ -80,7 +80,7 @@ static ssize_t	ft_split_iteration(char const *s, char c, char **strs,
 		i++;
 		len += start;
 	}
-	strs[i] = '\0';
+	strs[i] = NULL;
 	return (i);
 }
 

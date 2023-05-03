@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:59:00 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/26 16:31:47 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/05/03 15:31:09 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,17 @@ t_list	*make_list_a(t_data *data)
 	a = NULL;
 	while (data->tab_list[i])
 	{
+		if (ft_strlen_int(data->tab_list[i]) > 10)
+			return (ft_lstclear(a), ft_putstr_fd("Error\n", 2), NULL);
 		nb = ft_atoll(data->tab_list[i]);
 		if (nb < -2147483648 || nb > 2147483647)
 			return (ft_lstclear(a), ft_putstr_fd("Error\n", 2), NULL);
 		if (i == 0)
+		{
 			a = ft_lstnew(nb);
+			if (!a)
+				return (ft_putstr_fd("Error\n", 2), NULL);
+		}
 		else
 		{
 			following = ft_lstnew(nb);
