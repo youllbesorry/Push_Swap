@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 18:09:37 by bfaure            #+#    #+#             */
-/*   Updated: 2023/04/25 15:41:06 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/05/04 10:01:43 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ int		check_val_args(t_data *data);
 int		check_weird_args(t_data *data);
 int		check_multiple_same_digits(t_list *list);
 int		join_arg(int argc, char **argv, t_data *data);
+
+long long	overflow_control(t_data *data, t_list *lst_a, ssize_t i);
 
 #endif

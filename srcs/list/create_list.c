@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:59:00 by bfaure            #+#    #+#             */
-/*   Updated: 2023/05/03 15:31:09 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2023/05/04 10:04:58 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,16 @@
 
 t_list	*make_list_a(t_data *data)
 {
-	size_t		i;
+	ssize_t		i;
 	long long	nb;
 	t_list		*following;
 	t_list		*a;
 
-	i = 0;
+	i = -1;
 	a = NULL;
-	while (data->tab_list[i])
+	while (data->tab_list[++i])
 	{
-		if (ft_strlen_int(data->tab_list[i]) > 10)
-			return (ft_lstclear(a), ft_putstr_fd("Error\n", 2), NULL);
-		nb = ft_atoll(data->tab_list[i]);
-		if (nb < -2147483648 || nb > 2147483647)
-			return (ft_lstclear(a), ft_putstr_fd("Error\n", 2), NULL);
+		nb = overflow_control(data, a, i);
 		if (i == 0)
 		{
 			a = ft_lstnew(nb);
@@ -41,7 +37,6 @@ t_list	*make_list_a(t_data *data)
 				return (ft_lstclear(a), NULL);
 			ft_lstadd_back(&a, following);
 		}
-		i++;
 	}
 	return (a);
 }
